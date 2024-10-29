@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/style.css') }}">
+    <title>Life Time Value Predictor</title>
+</head>
+<body>
+    
+    <div class="background">
+        <div class="wrapper">
+            <div class="title">Life Time Value Predictor</div>
+            <form action="/" method="POST">
+                <div class="form">
+                    <div class="inputfield">
+                        <label for="AGE">Age</label>
+                        <input class="input" type="number" name="AGE" required>
+                    </div>
+                    <div class="inputfield">
+                        <label for="SALARY">Salary</label>
+                        <input class="input" type="flaot" name="SALARY" required>
+                    </div>
+                    <div class="inputfield">
+                        <label for="N_OF_DEPENDENTS">Number of Dependents</label>
+                        <input class="input" type="range" id="N_OF_DEPENDENTS" name="N_OF_DEPENDENTS" min="0" max="10" step="1" value="0" required>
+                        <span id="sliderValue">0</span> <!-- This will show the current value of the slider -->
+                    </div>
+                    <div class="inputfield">
+                        <label for="MORTGAGE_AMOUNT">Mortgage Amount</label>
+                        <input class="input" type="flaot" name="MORTGAGE_AMOUNT" required>
+                    </div>
+                    <div class="inputfield">
+                        <label for="N_MORTGAGES">Number of Mortgages</label>
+                        <input class="input" type="range" id="N_MORTGAGES" name="N_MORTGAGES" min="0" max="5" step="1" value="0" required>
+                        <span id="sliderValue1">0</span> 
+                    </div>
+                    <div class="inputfield">
+                        <label for="TIME_AS_CUSTOMER">Time as Customer</label>
+                        <input class="input" type="range" id="TIME_AS_CUSTOMER" name="TIME_AS_CUSTOMER" min="0" max="10" step="1" value="0" required>
+                        <span id="sliderValue2">0</span> 
+                    </div>
+                    <div class="inputfield">
+                        <label for="HAS_CHILDREN">Has Children</label>
+                        <div class = "custom_select">
+                            <select name="HAS_CHILDREN" id="HAS_CHILDREN">
+                                <option value="" selected hidden>Select</option>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select> 
+                        </div>
+                    </div>
+                    <div class="inputfield">
+                        <label for="HOUSE_OWNERSHIP">Number of House Owned</label>
+                        <div class = "custom_select">
+                            <select name="HOUSE_OWNERSHIP" id="HOUSE_OWNERSHIP">
+                                <option value="" selected hidden>Select</option>
+                                <option value="0">No Houses Owned</option>
+                                <option value="1">One House</option>
+                                <option value="2">Two Houses</option>
+                            </select>
+                        </div>
+                    </div>               
+                    <div class="inputfield">
+                        <input class="btn" type="submit" value="Predict LTV" name="act" id='submit'>
+                    </div>
+                    <div class="result">
+                        {% if pred_value != 0 %}
+                        <p>Estimated LTV : $ {{pred_value}}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    // JavaScript to update the span element with the current slider value
+    const slider1 = document.getElementById('N_MORTGAGES');
+    const sliderValue1 = document.getElementById('sliderValue1');
+
+    slider1.addEventListener('input', function() {
+        sliderValue1.textContent = slider1.value;
+    });
+   
+    const slider2 = document.getElementById('TIME_AS_CUSTOMER');
+    const sliderValue2 = document.getElementById('sliderValue2');
+
+    slider2.addEventListener('input', function() {
+        sliderValue2.textContent = slider2.value;
+    });
+
+    const slider = document.getElementById('N_OF_DEPENDENTS');
+    const sliderValue = document.getElementById('sliderValue');
+
+    slider.addEventListener('input', function() {
+        sliderValue.textContent = slider.value;
+    });
+</script>
+</html>

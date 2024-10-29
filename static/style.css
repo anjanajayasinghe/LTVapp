@@ -1,0 +1,332 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif,'Roboto';
+}
+body{
+    padding: 0 10px;
+    background-image: url(a.png);
+    font-family: 'Roboto', sans-serif;
+    min-height: 100%;
+    background-color: #121212;
+}
+
+.background{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    
+}
+
+.wrapper{
+    max-width:750px;
+    width: 200%;
+    margin: 20px auto;
+    box-shadow: 2px 2px 4px rgba(246, 242, 242, 0.125);
+    padding: 30px;
+}
+.wrapper .title{
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: rgb(239, 233, 241);
+    text-transform: uppercase;
+    text-align: center;
+    font-family:"Lucida Console", "Courier New", monospace;
+} 
+input, select, textarea, input[type="range"] {
+    margin-bottom: 18px;
+    border: 1px solid rgb(21, 151, 171); /* Light border color */
+    border-radius: 8px;
+    background: rgb(47, 65, 68); /* Transparent input background */
+    color: #87d7e4; /* Light text color */
+    font-size: 18px;
+    padding: 10px;
+    display: inline-block;
+    transition: all 0.3s ease; /* Smooth transition */
+    width: 100%; /* Set all inputs to full width */
+    box-sizing: border-box; /* Include padding and border in width */
+  }
+.wrapper .form{
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgb(36, 38, 45); /* Semi-transparent gradient background */
+    box-shadow: 0 4px 20px hwb(188 8% 33%); /* Soft shadow */
+    backdrop-filter: blur(8px); /* Blurring effect */
+} 
+.wrapper .form .inputfield{
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+.wrapper .form .inputfield label{
+    width: 200px;
+    color: rgb(255, 255, 255);
+    margin-right: 20px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.check{
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.check label{
+    padding: 0px 10px 0px 0px;
+}
+
+.wrapper .form .inputfield .input{
+    width: 100%;
+    outline: none;
+    border: 1px solid #d5dbd9;
+    font-size: 16px;
+    padding: 8px 10px;
+    border-radius: 3px;
+}
+
+.wrapper .form .inputfield .custom_select{
+    position: relative;
+    width: 100%;
+    height: 37px;
+}
+.wrapper .form .inputfield .custom_select:before{
+    position: absolute;
+    top: 12px;
+    right: 10px;
+}
+
+.wrapper .form .inputfield .custom_select select{
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    padding: 8px 10px;
+    font-size: 16px;
+    border: 1px solid #d5dbd9;
+    border-radius: 3px;
+}
+
+.wrapper .form .inputfield .btn{
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 18px; 
+    border: 0px;
+    background:  rgb(152, 214, 255);
+    color: #000000;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+    font-family:"Lucida Console", "Courier New", monospace;
+}
+.result p{
+    text-align: center;
+    color: rgba(241, 217, 246, 0.883);
+    font-size: 26px;
+    font-weight: bold;
+    font-family:"Lucida Console", "Courier New", monospace;
+}
+input::placeholder {
+    color: #87d7e4; /* Subtle gray placeholder text */
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  input:hover, select:hover, textarea:hover, input[type="range"]:hover {
+    border-color: #c6319c; /* Accent color on hover */
+    box-shadow: 0 0 8px hwb(317 19% 22%); /* Glowing effect */
+  }
+  
+  input[type="range"] {
+    height: 12px; /* Slider height */
+    background: #c6319c; /* Dark track color */
+    outline: none;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+  
+  .item {
+    position: relative;
+    margin: 10px;
+  }
+  
+  .item label {
+    margin-bottom: 5px;
+    color: #ffffff; /* Light color for labels inside items */
+  }
+  
+  .tooltip span {
+    color: #c6319c;
+    visibility: hidden; /* Tooltip accent */
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    background-color: rgb(250, 253, 253);
+    color: rgb(2, 2, 2);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -110px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  input[type="checkbox"] {
+      margin-left: 30px; /* Adjust spacing between checkbox and label */
+      margin-top: 10px;
+      position: relative;
+      transform: scale(1.5); /* Adjust size without showing extra box */
+      cursor: pointer;
+      appearance: none; /* Remove default checkbox styling */
+      border: 2px solid rgba(9, 75, 99, 0.673);
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      background: rgba(47, 65, 68, 0.8);
+      transition: all 0.3s ease; /* Smooth transition */
+  }
+    
+  input[type="checkbox"]:checked {
+      background-color: #1597ab; /* Change background when checked */
+      border-color: #1597ab;
+  }
+    
+  input[type="checkbox"]:checked::before {
+      content: "✔"; /* Display checkmark */
+      position: absolute;
+      top: -3px;
+      left: 3px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+  }
+    
+  input[type="checkbox"]:hover {
+      border-color: #c6319c; /* Highlight border on hover */
+      box-shadow: none; /* Remove extra box shadow */
+  }
+    
+  input[type="checkbox"] + label {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 5px; /* Adjust label positioning */
+      cursor: pointer;
+  }
+  
+  
+  
+  
+  .btn-block {
+    text-align: center;
+    margin-bottom: 0%;
+  }
+  
+  .btn[type="submit"] {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    padding: 12px 30px;
+    color: #f5f4f5;
+    background: linear-gradient(45deg, #692a58, #1597ab); /* Gradient button */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%; /* Make the button full width */
+    box-sizing: border-box;
+  }
+  
+  .btn[type="submit"]:hover {
+    background: linear-gradient(45deg, #1597ab, #692a58); /* Reverse gradient on hover */
+    box-shadow: 0 4px 15px rgba(0, 242, 255, 0.7); /* Glow effect */
+  }
+  
+  .back-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #1597ab; /* Optional: Change to your preferred color */
+    color: #fff; /* Optional: Change to your preferred text color */
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .back-link:hover {
+    background-color: #692a58; /* Optional: Change to your preferred hover color */
+  }
+  /* Style for the slider */
+input[type="range"] {
+    width: 100%; /* Full width */
+    height: 8px; /* Height of the track */
+    background: #ddd; /* Color of the track */
+    border-radius: 5px; /* Rounded corners for the track */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Slightly transparent */
+    transition: opacity .2s; /* Smooth transition for opacity */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling for webkit browsers */
+    appearance: none; /* Remove default styling */
+    width: 25px; /* Width of the thumb */
+    height: 25px; /* Height of the thumb */
+    background: #4CAF50; /* Color of the thumb */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 50%; /* Round shape for the thumb */
+    box-shadow: 0 0 2px #000; /* Optional shadow for the thumb */
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 25px; /* Width of the thumb */
+    height: 25px; /* Height of the thumb */
+    background: #4CAF50; /* Color of the thumb */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 50%; /* Round shape for the thumb */
+    box-shadow: 0 0 2px #000; /* Optional shadow for the thumb */
+}
+
+input[type="range"]::-ms-thumb {
+    width: 25px; /* Width of the thumb */
+    height: 25px; /* Height of the thumb */
+    background: #4CAF50; /* Color of the thumb */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 50%; /* Round shape for the thumb */
+    box-shadow: 0 0 2px #000; /* Optional shadow for the thumb */
+}
+
+/* Style for the slider value */
+#sliderValue {
+    font-size: 16px; /* Font size for the value */
+    color: #ffffff; /* Color of the displayed value */
+    margin-left: 10px; /* Space between slider and value */
+}
+#sliderValue1 {
+    font-size: 16px; /* Font size for the value */
+    color: #ffffff; /* Color of the displayed value */
+    margin-left: 10px; /* Space between slider and value */
+}
+#sliderValue2 {
+    font-size: 16px; /* Font size for the value */
+    color: #ffffff; /* Color of the displayed value */
+    margin-left: 10px; /* Space between slider and value */
+}
